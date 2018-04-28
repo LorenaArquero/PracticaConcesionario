@@ -1,0 +1,47 @@
+/* Inicio Admin */
+
+.listaUsers {
+	width: 40%;
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+.listaUsers td {
+	border: 1px solid black;	
+	text-align: center;
+
+}
+
+.negrita {
+	font-weight: bold;
+}
+
+.verde {
+	color: green;
+}
+
+.inputsFormulario {
+    width: 40%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.boton {
+    width: 40%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+/* Fin Admin */
