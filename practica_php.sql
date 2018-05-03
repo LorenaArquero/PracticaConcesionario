@@ -84,6 +84,13 @@ CREATE TABLE `usuario` (
 INSERT INTO `usuario` (`id`, `username`, `password`, `tipo`, `numeroSesiones`) VALUES
 (1, 'admin', 'admin1234', 'Admin', 0);
 
+INSERT INTO `usuario` (`id`, `username`, `password`, `tipo`, `numeroSesiones`) VALUES
+(2, 'proveedor', 'proveedor1234', 'Proveedor', 0);
+
+INSERT INTO `usuario` (`id`, `username`, `password`, `tipo`, `numeroSesiones`) VALUES
+(2, 'concesionario', 'concesionario1234', 'Concesionario', 0);
+
+
 --
 -- Índices para tablas volcadas
 --
