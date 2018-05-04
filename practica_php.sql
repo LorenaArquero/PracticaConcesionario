@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-04-2018 a las 17:22:17
--- Versión del servidor: 10.1.31-MariaDB
--- Versión de PHP: 7.2.4
+-- Tiempo de generación: 04-05-2018 a las 12:37:52
+-- Versión del servidor: 10.1.21-MariaDB
+-- Versión de PHP: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -30,6 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `mensajes` (
   `id` int(11) NOT NULL,
+  `emisor` varchar(15) NOT NULL,
   `texto` text NOT NULL,
   `leido` tinyint(1) NOT NULL,
   `fecha` date NOT NULL
@@ -43,11 +42,13 @@ CREATE TABLE `mensajes` (
 
 CREATE TABLE `pedidos` (
   `id` int(11) NOT NULL,
-  `concesionario` varchar(20) NOT NULL,
+  `concesionario` varchar(15) NOT NULL,
   `fecha` date NOT NULL,
   `proveedor` varchar(20) NOT NULL,
-  `producto` varchar(30) NOT NULL,
-  `productoID` int(11) NOT NULL
+  `producto` varchar(50) NOT NULL,
+  `productoID` int(11) NOT NULL,
+  `cantidad` int(11) NOT NULL,
+  `confirmado` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -58,9 +59,10 @@ CREATE TABLE `pedidos` (
 
 CREATE TABLE `productos` (
   `id` int(11) NOT NULL,
-  `proveedor` varchar(20) NOT NULL,
+  `proveedor` varchar(15) NOT NULL,
   `nombre` varchar(30) NOT NULL,
-  `cantidad` int(11) NOT NULL
+  `cantidad` int(11) NOT NULL,
+  `descatalogado` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -71,25 +73,10 @@ CREATE TABLE `productos` (
 
 CREATE TABLE `usuario` (
   `id` int(11) NOT NULL,
-  `username` varchar(20) NOT NULL,
+  `username` varchar(15) NOT NULL,
   `password` varchar(20) NOT NULL,
-  `tipo` varchar(15) NOT NULL,
-  `numeroSesiones` int(11) NOT NULL
+  `tipo` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `usuario`
---
-
-INSERT INTO `usuario` (`id`, `username`, `password`, `tipo`, `numeroSesiones`) VALUES
-(1, 'admin', 'admin1234', 'Admin', 0);
-
-INSERT INTO `usuario` (`id`, `username`, `password`, `tipo`, `numeroSesiones`) VALUES
-(2, 'proveedor', 'proveedor1234', 'Proveedor', 0);
-
-INSERT INTO `usuario` (`id`, `username`, `password`, `tipo`, `numeroSesiones`) VALUES
-(2, 'concesionario', 'concesionario1234', 'Concesionario', 0);
-
 
 --
 -- Índices para tablas volcadas
@@ -128,26 +115,21 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `mensajes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
-COMMIT;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
