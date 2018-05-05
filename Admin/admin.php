@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Practica PHP</title>
-	<link rel="stylesheet" type="text/css" href="estilos.css">
+	<link rel="stylesheet" type="text/css" href="../estilos.css">
 </head>
 
 <body>
@@ -22,6 +22,8 @@
 					<td class="negrita">Tipo</td>
 	                <td class="negrita">Modificar</td>
 	                <td class="negrita">Eliminar</td>
+	                <td class="negrita">Bloquear</td>
+	                <td class="negrita">Desbloquear</td>
 				  </tr>
 	<?php
 			
@@ -45,6 +47,16 @@
 	                <td>
 	                	<form method="post" action="eliminarUser.php?ID=<?php echo $IDu;?>">
 	                    	<input type="submit" value="Eliminar" name="eliminar" />
+	                    </form>
+	                </td>
+	                <td> 
+	                    <form method="post" action="bloquearUser.php?ID=<?php echo $IDu;?>">
+	                    	<input type="submit" value="Bloquear" name="bloquear" />
+	                    </form>
+	                </td>
+	                <td>
+	                	<form method="post" action="desbloquearUser.php?ID=<?php echo $IDu;?>">
+	                    	<input type="submit" value="Desbloquear" name="desbloquear" />
 	                    </form>
 	                </td>
 				  </tr>
