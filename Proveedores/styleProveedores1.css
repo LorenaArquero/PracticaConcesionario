@@ -1,0 +1,53 @@
+/********************************************************  TABLE PRODUCTOS STYLE     ----START-----         **********************************************************/
+table#productos_table {
+    text-align:center; 
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table#productos_table td, table#productos_table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+table#productos_table tr:nth-child(even){background-color: #f2f2f2;}
+
+table#productos_table tr:hover {background-color: #ddd;}
+
+table#productos_table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+/********************************************************  TABLE PRODUCTS STYLE     ----END-----         **********************************************************/
+
+/********************************************************  TABLE PEDIDOS STYLE     ----START-----         **********************************************************/
+table#pedidos_table {
+    text-align:center; 
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table#pedidos_table td, table#pedidos_table th {
+    text-align:center; 
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+table#pedidos_table tr:nth-child(even){background-color: #f2f2f2;}
+
+table#pedidos_table tr:hover {background-color: rgb(165, 159, 159);}
+
+table#pedidos_table th {
+    text-align:center; 
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(175, 76, 114);
+    color: white;
+}
+/********************************************************  TABLE PEDIDOS STYLE     ----END-----         **********************************************************/
