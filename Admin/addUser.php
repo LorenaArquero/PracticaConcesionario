@@ -10,7 +10,8 @@
 
 	<?php
 
-		include("conexion.php");
+		//include("conexion.php");
+		include("../db_connect/db_connect.php");
 
 		if(isset($_POST['registrar']))
 		{
@@ -20,7 +21,7 @@
 				$pass = $_POST['pass'];
 				$tipo = $_POST['tipo'];
 
-				mysqli_query($conn, "insert into usuario(username, password, tipo) VALUES('$usuario', '$pass', '$tipo')");
+				mysqli_query($connection, "insert into usuario(username, password, tipo) VALUES('$usuario', '$pass', '$tipo')");
 				
 				echo "<p class='verde'>INSERCIÓN REALIZADA CON ÉXITO</p>";
 			}

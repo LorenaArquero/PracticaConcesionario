@@ -9,17 +9,20 @@
 <body>
 
 	<?php
-			include("conexion.php");
+
+			include("../db_connect/db_connect.php");
 			
-			$consulta = mysqli_query($conn, "SELECT * FROM usuario");
+			$consulta = mysqli_query($connection, "SELECT * FROM usuario");
 			
 	?>
 
 			<table class="listaUsers">
 	            <tr>
+	            	<td class="negrita">ID</td>
 					<td class="negrita">Usuario</td>
 					<td class="negrita">Contraseña</td>
 					<td class="negrita">Tipo</td>
+					<td class="negrita">Sesiones abiertas</td>
 	                <td class="negrita">Modificar</td>
 	                <td class="negrita">Eliminar</td>
 	                <td class="negrita">Bloquear</td>
@@ -33,12 +36,16 @@
 				$user=$filas['username'];
 				$pass=$filas['password'];
 				$tipo=$filas['tipo'];
+				$numeroSesiones=$filas['numeroSesiones'];
+
 				
 	?>
 				  <tr>
+				  	<td><?php echo "<p>".$IDu."</p>";?></td>
 					<td><?php echo "<p>".$user."</p>";?></td>
 					<td><?php echo "<p>".$pass."</p>";?></td>
 					<td><?php echo "<p>".$tipo."</p>";?></td>
+					<td><?php echo "<p>".$numeroSesiones."</p>";?></td>
 	                <td> 
 	                    <form method="post" action="modificarUser.php?ID=<?php echo $IDu;?>">
 	                    	<input type="submit" value="Modificar" name="modificar" />

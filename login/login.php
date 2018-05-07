@@ -19,8 +19,8 @@
 
 			if($numeroSesiones == '1'){		//comprobamos el numero de sesiones abiertas que tiene un usuario para saber si hay que denegarle acceso o no
 
-				echo "NO PUEDES ABRIR MAS DE UNA SESIÓN O EL ADMIN TE HA BLOQUEADO";
-				header('refresh: 1; url=login.html'); //tiempo que tarda en recargar la pagina cuando un usuario esta bloqueado (1 segundo)
+				echo '<script language="javascript">alert("NO PUEDES ABRIR MAS DE UNA SESIÓN O EL ADMIN TE HA BLOQUEADO");</script>'; 
+				header('refresh: 0.1; url=login.html'); //tiempo que tarda en recargar la pagina cuando un usuario esta bloqueado (0.1 segundos)
 
 			}else{
 
@@ -32,7 +32,6 @@
 		   			if($tipo == "Concesionario"){
 
 		   				mysqli_query($connection, "UPDATE usuario SET numeroSesiones='1' WHERE id='".$ID."'"); 
-		   				echo "hola concesionario";
 
 		   				header("Location: ../concesionarios/concesionario.php");
 
@@ -40,21 +39,24 @@
 
 		   				mysqli_query($connection, "UPDATE usuario SET numeroSesiones='1' WHERE id='".$ID."'"); 
 
-		   				echo("hola proveedor");
 		   				//header("Location: proveedor.php"); //cambiar ruta!!!!!!!!!!!!!!
 
 		   			}
 
 		   		}else{
-		   			    echo "¡Usuario o contraseña incorrectos! 1";
+		   			    echo '<script language="javascript">alert("¡Usuario o contraseña incorrectos!");</script>';
+		   			    header('refresh: 0.1; url=login.html'); //tiempo que tarda en recargar la pagina cuando un usuario ha introducido mal la contraseña (0.1 segundos)
+ 
 		   		}
 
 			}
 
 	   		
 	   	}else{
-	   		echo "¡Usuario o contraseña incorrectos! 2";
-	   	}
+ 				echo '<script language="javascript">alert("¡Usuario o contraseña incorrectos!");</script>';
+		   		header('refresh: 0.1; url=login.html'); //tiempo que tarda en recargar la pagina cuando un usuario no ha introducido los datos (0.1 segundos)
+  	
+		}
 
 	}
 

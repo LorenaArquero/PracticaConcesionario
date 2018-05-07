@@ -10,14 +10,16 @@
 
 	<?php
 
-		include("conexion.php");
+		include("../db_connect/db_connect.php");
 
 		$ID = $_GET["ID"];
 
 		if(isset($_POST['eliminar']))
 		{
-				//echo("el id de la BD es $IDu");
-				mysqli_query($conn, "DELETE FROM usuario WHERE id='".$ID."'");
+				mysqli_query($connection, "DELETE FROM usuario WHERE id='".$ID."'");
+				//mysqli_query($connection, "DELETE FROM pedidos WHERE id='".$ID."'");
+				//mysqli_query($connection, "DELETE FROM productos WHERE id='".$ID."'");
+
 				
 				header('refresh: 1; url=admin.php'); //tiempo que tarda en recargar la pagina cuando se elimina un usuario (1 segundo)
 				

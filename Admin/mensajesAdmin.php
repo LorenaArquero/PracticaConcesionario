@@ -21,7 +21,7 @@
            
             // Hacemos un Loop por cada checkbox seleccionado para poner el mensaje como leido
 
-            foreach($_POST['check_list'] as $selected) {        //selected valdra lo que valga el value del checkbox (el ID)
+            foreach($_POST['check_list'] as $selected) {        //selected valdra lo que valga el value del checkbox (el ID) en obtenerTodosMensajes.php y obtenerMensajesNoLeidos.php
                 
                 mysqli_query($connection, "UPDATE mensajes SET leido = '1' WHERE id = '$selected'"); 
             }

@@ -9,18 +9,19 @@
 <body>
 
 	<?php
-		include("conexion.php");
+
+		include("../db_connect/db_connect.php");
 
 		$ID = $_GET["ID"];
 
-		$consulta = mysqli_query($conn, "SELECT * FROM usuario WHERE id='".$ID."'");
+		$consulta = mysqli_query($connection, "SELECT * FROM usuario WHERE id='".$ID."'");
 
-				while($filax = mysqli_fetch_array($consulta))
-				{	
-					$user=$filax['username'];
-					$pass=$filax['password'];
-					$tipo=$filax['tipo'];
-				}
+		while($filax = mysqli_fetch_array($consulta))
+		{	
+			$user=$filax['username'];
+			$pass=$filax['password'];
+			$tipo=$filax['tipo'];
+		}
 				
 		if(isset($_POST['modificar']))
 		{
@@ -30,7 +31,7 @@
 				$pass2 = $_POST['pass2'];
 				$tipo2 = $_POST['tipo2'];
 				
-				mysqli_query($conn, "UPDATE usuario SET username = '$usuario2', password = '$pass2', tipo = '$tipo2' WHERE id = '$ID'"); 
+				mysqli_query($connection, "UPDATE usuario SET username = '$usuario2', password = '$pass2', tipo = '$tipo2' WHERE id = '$ID'"); 
 				
 				echo "<p class='verde'>MODIFICACIÓN REALIZADA CON ÉXITO</p>";
 			}
@@ -49,22 +50,21 @@
 
 	<?php 		if($tipo == "Concesionario"){ //si el tipo = concesionario en el select box aparece selccionado concesionario ?>
 		    	
-		    	<select class="inputsFormulario" name="tipo2">
-				  <option value="Concesionario">Concesionario</option>
-				  <option value="Proveedor">Proveedor</option>
-				</select>
-			    <br />
+			    	<select class="inputsFormulario" name="tipo2">
+					  <option value="Concesionario">Concesionario</option>
+					  <option value="Proveedor">Proveedor</option>
+					</select>
+				    <br />
 
 	<?php 		
 				} else { //si el tipo = proveedor en el select box aparece selccionado proveedor 
 
 	?>
-
-		    	<select class="inputsFormulario" name="tipo2">
-		    	  <option value="Proveedor">Proveedor</option>
-				  <option value="Concesionario">Concesionario</option>
-				</select>
-			    <br />
+			    	<select class="inputsFormulario" name="tipo2">
+			    	  <option value="Proveedor">Proveedor</option>
+					  <option value="Concesionario">Concesionario</option>
+					</select>
+				    <br />
 
 	<?php 		
 				} 
