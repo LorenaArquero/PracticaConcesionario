@@ -36,9 +36,9 @@
                     
                         
                 <form method="post">
-                        <input type="radio" name="gender" <?php if (isset($gender) && $gender=="Ambos") echo "checked";?> value="Ambos (confirmados y no confirmados)">Ambos (confirmados y no confirmados)    
-                        <input type="radio" name="gender" <?php if (isset($gender) && $gender=="Confirmado") echo "checked";?> value="Confirmados">Confirmados
-                        <input type="radio" name="gender" <?php if (isset($gender) && $gender=="No Confirmado") echo "checked";?> value="No Confirmados">No confirmados
+                        <input type="radio" name="gender" <?php if (isset($gender) && $gender=="Ambos") ;?> value="Ambos (confirmados y no confirmados)">Ambos (confirmados y no confirmados)    
+                        <input type="radio" name="gender" <?php if (isset($gender) && $gender=="Confirmado") ;?> value="Confirmados">Confirmados
+                        <input type="radio" name="gender" <?php if (isset($gender) && $gender=="No Confirmado") ;?> value="No Confirmados">No confirmados
                         <br>
 
                     <?php $gender = ""?>
@@ -51,14 +51,29 @@
                                 $gender = $_POST["gender"];
                                 echo "Ha seleccionado => " .$gender;   
                             }
-                        ?>
+                    ?>
                    
                 </form>
             </fieldset>
-            <br><br><br><br>
+            <br><br>
+            
+            <br><br>
             <fieldset>
                 
                 <legend>Datos: TABLA PEDIDOS <?php echo $gender?></legend>
+                
+                <fieldset>
+                    <legend>Opciones de confirmar pedido.</legend>
+                        <?php $valorRadioButton = ""?>
+                        <form action="confirmarPedido.php" method="POST">
+                            Introduzca Id: <input type="text" name="idIntroducido" > 
+                            <input type="radio" name="option"<?php if (isset($valorRadioButton) && $valorRadioButton=="si");?> value="si">Si
+                            <input type="radio" name="option"<?php if (isset($valorRadioButton) && $valorRadioButton=="no");?> value="no">No
+                            
+                            <input type="submit" name="submitConfirmar" value="Submit">
+                        </form>
+                </fieldset>
+            <br><br>
                 <div>
                    <?php
                         if(strcmp($gender, "Ambos (confirmados y no confirmados)")==0 ){
