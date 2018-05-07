@@ -24,7 +24,7 @@
 	                <td class="negrita">Eliminar</td>
 	                <td class="negrita">Bloquear</td>
 	                <td class="negrita">Desbloquear</td>
-				  </tr>
+				</tr>
 	<?php
 			
 			while($filas = mysqli_fetch_array($consulta))
