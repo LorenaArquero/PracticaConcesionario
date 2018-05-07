@@ -1,4 +1,4 @@
-﻿/* Contenedor del login */
+/* Contenedor del login */
 
 #login {
    background-color: #77B0C5;
@@ -17,7 +17,7 @@
 /* Etiquetas del formulario */
 
 label {
-   color: white;
+   color: rgb(50, 50, 50);
    display: block;
    margin-bottom: 6px;
    margin-left: 1.2em;

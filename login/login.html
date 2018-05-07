@@ -2,6 +2,8 @@
    <head>
       <title>Login</title>
       <link rel="stylesheet" type="text/css" href="estilos.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script type="text/javascript" src="scriptLogin.js"></script>
    </head>
    <body>
       <div id="login">
@@ -14,6 +16,17 @@
          </form>
       </div>
 
-      
+      <div>
+         
+         <form action= "" method="post">
+            <label>De: </label>
+            <input type="text" id="emisor"/><br>
+            <label>Mensaje: </label>
+            <textarea rows="10" cols="50"></textarea>
+            <input type="button" value="Enviar mensaje" id="botonMensaje"/>
+
+         </form>
+
+      </div>
    </body>
 </html>
