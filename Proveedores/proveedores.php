@@ -10,7 +10,7 @@
     <br>
 
         <?php
-            $nameProveedor = "pepe";
+            $nameProveedor = $_GET["user"];
         ?>
 
         <form action="../Proveedores/cerrarSesion.php?nameProveedor=<?php echo $nameProveedor;?>" method="post">
@@ -82,7 +82,7 @@
         <fieldset id="fieldset1">
                     <legend id="legend2">Opciones de confirmar pedido.</legend>
                         <?php $valorRadioButton = ""?>
-                        <form action="confirmarPedido.php" method="POST">
+                        <form action="confirmarPedido.php?nameProveedor=<?php echo $nameProveedor;?>" method="POST">
                             Introduzca Id: <input type="text" name="idIntroducido" > 
                             <input type="radio" name="option"<?php if (isset($valorRadioButton) && $valorRadioButton=="si");?> value="si">Si
                             <input type="radio" name="option"<?php if (isset($valorRadioButton) && $valorRadioButton=="no");?> value="no">No

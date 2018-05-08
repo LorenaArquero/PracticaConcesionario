@@ -33,13 +33,13 @@
 
 		   				mysqli_query($connection, "UPDATE usuario SET numeroSesiones='1' WHERE id='".$ID."'"); 
 
-		   				header("Location: ../concesionarios/concesionario.php");
+		   				header("Location: ../concesionarios/concesionario.php?ID=".$ID."\"");
 
 		   			}elseif ($tipo == "Proveedor") {
 
 		   				mysqli_query($connection, "UPDATE usuario SET numeroSesiones='1' WHERE id='".$ID."'"); 
 
-		   				//header("Location: proveedor.php"); //cambiar ruta!!!!!!!!!!!!!!
+		   				header("Location: ../Proveedores/proveedores.php?user=".$user); 
 
 		   			}
 

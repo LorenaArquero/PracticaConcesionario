@@ -1,7 +1,7 @@
 <?php
     include("Conecxion.php");
     $Con = new  conecxion();
-    $resultado = $_POST['idIntroducido'];
+    $usuario = $_GET['nameProveedor'];
    
 
     
@@ -26,7 +26,7 @@
     echo '<button id="myButton" class="float-left submit-button" >Pagina de proveedores</button>
     <script type="text/javascript">
         document.getElementById("myButton").onclick = function () {
-            location.href = "/Proveedores/proveedores.php";
+            location.href = "../Proveedores/proveedores.php?user='.$usuario.'";
         };
     </script>';
     

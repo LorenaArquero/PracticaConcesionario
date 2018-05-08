@@ -11,5 +11,5 @@
     $Con->cerrarSesion($nameProveedor);
 
 
-    header("Location: ../login/login.php");
+    header("Location: ../login/login.html");
 ?>
