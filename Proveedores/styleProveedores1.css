@@ -1,9 +1,21 @@
+body{
+    background-color: rgba(105, 90, 205, 0.2);
+}
+
+/********************************************************  DIV GENERAL  **********************************************************/
+div#general{
+    width: 85%;
+    margin:0 auto 0 auto;
+    
+   
+}
 /********************************************************  TABLE PRODUCTOS STYLE     ----START-----         **********************************************************/
 table#productos_table {
     text-align:center; 
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
+  
 }
 
 table#productos_table td, table#productos_table th {
@@ -19,7 +31,7 @@ table#productos_table th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #4CAF50;
+    background-color: rgb(197, 194, 248);
     color: white;
 }
 /********************************************************  TABLE PRODUCTS STYLE     ----END-----         **********************************************************/
@@ -51,3 +63,77 @@ table#pedidos_table th {
     color: white;
 }
 /********************************************************  TABLE PEDIDOS STYLE     ----END-----         **********************************************************/
+
+
+fieldset#fieldset1{
+    display: block;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-top: 0.35em;
+    padding-bottom: 0.625em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    border: 2px groove (internal value);
+    background-color: rgba(252, 253, 137, 0.898);
+    border:3px solid rgb(128, 62, 0);
+    border-radius: 10px;
+}
+
+fieldset#fieldset2{
+    display: block;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-top: 0.35em;
+    padding-bottom: 0.625em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    border: 2px groove (internal value);
+    background-color: rgba(215, 250, 221, 0.809);
+    border:3px solid green;
+    border-radius: 5px;
+    
+}
+
+
+
+/******************************** Estilo legend, legend1 y legend2 **************************************************/
+legend#legend{
+    background-color: rgba(215, 230, 250, 0.809);
+    font-size: 30px;
+    font-style:oblique;
+    padding: 5px;
+    border-radius: 30px 30px 30px 30px;
+    border-color: rgba(29, 28, 33, 0.748);
+    border-style: solid;
+
+    
+}
+legend#legend1{
+    background-color: rgba(215, 230, 250, 0.809);
+    font-size: 30px;
+    font-style:oblique;
+    padding: 5px;
+    border-radius: 30px 30px 30px 30px;
+    border-color: rgba(29, 28, 33, 0.748);
+    border-style: solid;
+}
+
+legend#legend2{
+    background-color: rgba(250, 215, 224, 0.809);
+    font-size: 18px;
+    font-style:Helvetica;
+    padding: 15px;
+    border-radius: 50px 50px 50px 50px;
+    border-color: rgba(29, 28, 33, 0.748);
+    border-style: solid;
+}
+/******************************** Estilo div_menu **************************************************/
+
+
+div#div_menu{
+    background-color: rgba(250, 220, 215, 0.857);
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+    border-radius: 50px 50px 50px 50px;
+}

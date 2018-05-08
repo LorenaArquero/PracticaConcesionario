@@ -3,7 +3,7 @@ echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
     class conecxion{
         function mostrarDatosEnTabla($resultado){ 
         }
-        function recuperarDatosProductos(){
+        function recuperarDatosProductos($name_proveedor){
             $enlace = mysqli_connect("localhost", "root", "", "practica_php");
            
             /* comprobar la conexión */
@@ -11,51 +11,7 @@ echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
                 printf("Falló la conexión: %s\n", mysqli_connect_error());
                 exit();
             }  
-            $consulta = "SELECT * FROM pedidos";    
-            //$consulta = "SELECT * FROM productos";    
-            if ($resultado = mysqli_query($enlace, $consulta)){
-               // mostrarDatosEnTabla($resultado);
-                
-                echo "<table id='pedidos_table' border='2' width='500'>\n";
-                        
-                echo "<tr><th>Id</th><th>Concesionario</th><th>Fecha</th><th>Proveedor</th><th>Producto</th><th>ProductoID</th><th>Confirmado</th><th>¿Confirmado?</th></tr>";
-                
-                // obtener el array asociativo 
-                while ($obj = mysqli_fetch_object($resultado) ){
-                    //printf ("%s %s %s %s %s<br>" , $obj->id, $obj->proveedor, $obj->nombre, $obj->cantidad, $obj->descatalogado);
-                    // /*Imprimir tabla pedidos.*/printf ("%s %s %s %s %s %s %s<br>" , $obj->id, $obj->concesionario, $obj->fecha, $obj->proveedor, $obj->producto, $obj->productoID,$obj->confirmado);
-                    echo "<tr>";
-                        echo '<td>'.$obj->id.'</td>';
-                        echo "<td>$obj->concesionario</td>";
-                        echo "<td>$obj->fecha</td>";
-                        echo "<td>$obj->proveedor</td>";
-                        echo "<td>$obj->producto</td>";
-                        echo "<td>$obj->productoID</td>";
-                        echo "<td>$obj->confirmado</td>";
-                        
-                        $gender = "";
-                        
-                        echo '<td><form><input type="radio" name="option" value="si">Si
-                                    <input type="radio" name="option" value="no">No
-                                    <input type="submit" name="submitConfirmar" value="Submit"></form></td>';
-                    echo "</tr>"; 
-                }
-                echo "</table>\n";
-                /* liberar el conjunto de resultados */
-                mysqli_free_result($resultado);
-            }
-            /* cerrar la conexión */
-            mysqli_close($enlace);
-        }
-        function recuperarDatosProductosConfirmados(){
-            $enlace = mysqli_connect("localhost", "root", "", "practica_php");
-           
-            /* comprobar la conexión */
-            if (mysqli_connect_errno()) {
-                printf("Falló la conexión: %s\n", mysqli_connect_error());
-                exit();
-            }  
-            $consulta = "SELECT * FROM pedidos where confirmado = 1";    
+            $consulta = "SELECT * FROM pedidos where proveedor LIKE '$name_proveedor' ";    
             //$consulta = "SELECT * FROM productos";    
             if ($resultado = mysqli_query($enlace, $consulta)){
                // mostrarDatosEnTabla($resultado);
@@ -85,7 +41,7 @@ echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
             /* cerrar la conexión */
             mysqli_close($enlace);
         }
-        function recuperarDatosProductosNoConfirmados(){
+        function recuperarDatosProductosConfirmados($name_proveedor){
             $enlace = mysqli_connect("localhost", "root", "", "practica_php");
            
             /* comprobar la conexión */
@@ -93,7 +49,46 @@ echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
                 printf("Falló la conexión: %s\n", mysqli_connect_error());
                 exit();
             }  
-            $consulta = "SELECT * FROM pedidos where confirmado = 0";    
+           
+            $consulta = "SELECT * FROM pedidos where proveedor LIKE '$name_proveedor' AND confirmado = 1";    
+            //$consulta = "SELECT * FROM productos";    
+            if ($resultado = mysqli_query($enlace, $consulta)){
+               // mostrarDatosEnTabla($resultado);
+                
+                echo "<table id='pedidos_table' border='2' width='500'>\n";
+                        
+                echo "<tr><th>Id</th><th>Concesionario</th><th>Fecha</th><th>Proveedor</th><th>Producto</th><th>ProductoID</th><th>Confirmado</th></tr>";
+                
+                // obtener el array asociativo 
+                while ($obj = mysqli_fetch_object($resultado) ){
+                    //printf ("%s %s %s %s %s<br>" , $obj->id, $obj->proveedor, $obj->nombre, $obj->cantidad, $obj->descatalogado);
+                    // /*Imprimir tabla pedidos.*/printf ("%s %s %s %s %s %s %s<br>" , $obj->id, $obj->concesionario, $obj->fecha, $obj->proveedor, $obj->producto, $obj->productoID,$obj->confirmado);
+                    echo "<tr>";
+                        echo "<td>$obj->id</td>";
+                        echo "<td>$obj->concesionario</td>";
+                        echo "<td>$obj->fecha</td>";
+                        echo "<td>$obj->proveedor</td>";
+                        echo "<td>$obj->producto</td>";
+                        echo "<td>$obj->productoID</td>";
+                        echo "<td>$obj->confirmado</td>";
+                    echo "</tr>";
+                }
+                echo "</table>\n";
+                /* liberar el conjunto de resultados */
+                mysqli_free_result($resultado);
+            }
+            /* cerrar la conexión */
+            mysqli_close($enlace);
+        }
+        function recuperarDatosProductosNoConfirmados($name_proveedor){
+            $enlace = mysqli_connect("localhost", "root", "", "practica_php");
+           
+            /* comprobar la conexión */
+            if (mysqli_connect_errno()) {
+                printf("Falló la conexión: %s\n", mysqli_connect_error());
+                exit();
+            }  
+            $consulta = $consulta = "SELECT * FROM pedidos where proveedor LIKE '$name_proveedor' AND confirmado = 0"; 
             //$consulta = "SELECT * FROM productos";    
             if ($resultado = mysqli_query($enlace, $consulta)){
                // mostrarDatosEnTabla($resultado);
@@ -249,11 +244,10 @@ echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
                 printf("Falló la conexión: %s\n", mysqli_connect_error());
                 exit();
             }
-           
+            
             $consulta = "UPDATE pedidos SET confirmado = 1 WHERE id = $ID";    
             $resultado = mysqli_query($enlace, $consulta);
             
-
             /* cerrar la conexión */
             mysqli_close($enlace);
         }

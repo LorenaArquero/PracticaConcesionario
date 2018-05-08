@@ -50,7 +50,7 @@ echo '<pre>';
             echo "ERROR: El fichero que intenta abrir no es de tipo XML. Vuelva a intentarlo de nuevo.";
         }
     } else {
-        echo "¡Posible ataque de subida de ficheros!\n";
+        echo "¡No ha seleccionado ningún fichero!\n";
     }
 
 

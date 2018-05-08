@@ -24,10 +24,9 @@
     }
 
     echo '<button id="myButton" class="float-left submit-button" >Pagina de proveedores</button>
-
     <script type="text/javascript">
         document.getElementById("myButton").onclick = function () {
-            location.href = "/PruebasXML/proveedores.php";
+            location.href = "/Proveedores/proveedores.php";
         };
     </script>';
     
