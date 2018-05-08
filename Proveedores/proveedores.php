@@ -10,11 +10,12 @@
     <br>
 
         <?php
-            $nameProveedor = "proveedorF";
+            $nameProveedor = "pepe";
         ?>
 
-
-        
+        <form action="../Proveedores/cerrarSesion.php?nameProveedor=<?php echo $nameProveedor;?>" method="post">
+            <button type="submit" id="myButton"  class="button button2" >Salir - Ventana Login</button>
+        </form>
         <fieldset id="fieldset1">
                 <div id="div_menu">
                     <ol>

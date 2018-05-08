@@ -158,18 +158,18 @@ echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
                                 ('concesionario1',NOW(),'proveedorZ','coche','396','12','1'),
                                 ('concesionario4',NOW(),'proveedorX','bus','345','45','0'),
                                 ('concesionario8',NOW(),'proveedorF','coche','23234','5','1'),
-                                ('concesionario3',NOW(),'proveedorX','plane','3453','68','0'),
+                                ('concesionario3',NOW(),'pepe','plane','3453','68','0'),
                                 ('concesionario1',NOW(),'proveedorX','coche','456','35','1'),
-                                ('concesionario2',NOW(),'proveedorZ','coche','396','12','1'),
+                                ('concesionario2',NOW(),'pepe','coche','396','12','1'),
                                 ('concesionario4',NOW(),'proveedorA','bus','345','45','0'),
                                 ('concesionario8',NOW(),'proveedorF','coche','23234','5','0'),
-                                ('concesionario1',NOW(),'proveedorX','plane','3453','68','1'),
+                                ('concesionario1',NOW(),'pepe','plane','3453','68','1'),
                                 ('concesionario6',NOW(),'proveedorX','coche','23234','100','1'),
                                 ('concesionario1',NOW(),'proveedorU','coche','396','12','0'),
                                 ('concesionario5',NOW(),'proveedorX','bus','345','35','1'),
                                 ('concesionario8',NOW(),'proveedorF','coche','234','35','0'),
-                                ('concesionario6',NOW(),'proveedorX','plane','3453','35','1'),
-                                ('concesionario3',NOW(),'proveedorA','coche','234','6','0')";
+                                ('concesionario6',NOW(),'pepe','plane','3453','35','1'),
+                                ('concesionario3',NOW(),'pepe','coche','234','6','0')";
 
             if(mysqli_query($enlace, $sql)){
                 echo "Records added successfully in table pedidos.<br>";
@@ -189,18 +189,22 @@ echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
                 exit();
             }
             $sql = "INSERT INTO productos (proveedor, nombre, cantidad, descatalogado) VALUES 
-                                ('p1', 'Pepe', '2','true'),
-                                ('p1', 'Pepe', '25','true'),
-                                ('p1', 'Pepe', '54','true'),
-                                ('p1', 'Pepe', '8','true'),
-                                ('p2', 'Lucas', '100','true'),
-                                ('p3', 'Mike', '21','false'),
-                                ('p3', 'Mike', '18','false'),
-                                ('p4', 'Sebastian', '84','true'),
-                                ('p4', 'Sebastian', '87','true'),
-                                ('p5', 'Niki', '130','false'),
-                                ('p5', 'Niki', '221','true'),
-                                ('p5', 'Niki', '1822','false')";
+                                ('pepe', 'coche', '2','true'),
+                                ('p1', 'avion', '25','true'),
+                                ('pepe', 'bicicleta', '54','true'),
+                                ('p1', 'coche', '8','true'),
+                                ('pepe', 'moto', '100','true'),
+                                ('pepe', 'moto', '21','false'),
+                                ('p3', 'coche', '18','false'),
+                                ('pepe', 'Sebastian', '84','true'),
+                                ('p4', 'bus', '87','true'),
+                                ('pepe', 'bicicleta', '130','false'),
+                                ('p5', 'bus', '221','true'),
+                                ('p5', 'camion', '1822','false'),
+                                ('p4', 'bus', '87','true'),
+                                ('pepe', 'bicicleta', '130','false'),
+                                ('p5', 'bus', '221','true'),
+                                ('p5', 'camion', '1822','false')";
 
             if(mysqli_query($enlace, $sql)){
                 echo "Records added successfully.<br>";
@@ -261,6 +265,21 @@ echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
             } 
              
             $consulta = "UPDATE pedidos SET confirmado = 0 WHERE id = $ID";    
+            $resultado = mysqli_query($enlace, $consulta);
+           
+            /* cerrar la conexión */
+            mysqli_close($enlace);
+        }
+        function cerrarSesion($proveedor){
+            $enlace = mysqli_connect("localhost", "root", "", "practica_php");
+           
+            /* comprobar la conexión */
+            if (mysqli_connect_errno()) {
+                printf("Falló la conexión: %s\n", mysqli_connect_error());
+                exit();
+            } 
+             
+            $consulta = "UPDATE usuario SET numeroSesiones = 0 WHERE username = '$proveedor'";    
             $resultado = mysqli_query($enlace, $consulta);
            
             /* cerrar la conexión */
