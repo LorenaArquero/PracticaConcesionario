@@ -80,6 +80,9 @@
 			<a href="addUser.php">Añadir usuario</a>
 			<br />
 			<a href="mensajesAdmin.php">Ver mensajes</a>
+			<br />
+			<a href="../login/login.html">Cerrar Sesión</a>
+
 
 </body>
 </html>

@@ -13,6 +13,21 @@
 		include("../db_connect/db_connect.php");
 
 		$ID = $_GET["ID"];
+		$sacarUser = mysqli_query($connection, "SELECT username FROM usuario WHERE id ='".$ID."'");
+        $sacarTipo = mysqli_query($connection, "SELECT tipo FROM usuario WHERE id ='".$ID."'");
+
+		while($linea = mysqli_fetch_array($sacarUser)){
+
+		        $usuario1 =$linea["username"];
+
+		 }
+
+		while($linea = mysqli_fetch_array($sacarTipo)){
+
+		        $tipo =$linea["tipo"];
+
+		 }
+
 
 		$consulta = mysqli_query($connection, "SELECT * FROM usuario WHERE id='".$ID."'");
 
@@ -20,7 +35,6 @@
 		{	
 			$user=$filax['username'];
 			$pass=$filax['password'];
-			$tipo=$filax['tipo'];
 		}
 				
 		if(isset($_POST['modificar']))
@@ -29,9 +43,20 @@
 			{
 				$usuario2 = $_POST['user2'];
 				$pass2 = $_POST['pass2'];
-				$tipo2 = $_POST['tipo2'];
 				
-				mysqli_query($connection, "UPDATE usuario SET username = '$usuario2', password = '$pass2', tipo = '$tipo2' WHERE id = '$ID'"); 
+				mysqli_query($connection, "UPDATE usuario SET username = '$usuario2', password = '$pass2' WHERE id = '$ID'"); 
+
+				if($tipo == "Concesionario"){
+
+					mysqli_query($connection, "UPDATE pedidos SET concesionario = '".$usuario2."' WHERE concesionario = '".$usuario1."'"); 
+				}else{
+
+					mysqli_query($connection, "UPDATE pedidos SET proveedor = '$usuario2' WHERE proveedor = '$usuario1'"); 
+					mysqli_query($connection, "UPDATE productos SET proveedor = '$usuario2' WHERE proveedor = '$usuario1'"); 
+
+
+				}
+
 				
 				echo "<p class='verde'>MODIFICACIÓN REALIZADA CON ÉXITO</p>";
 			}
@@ -42,37 +67,16 @@
 
 		<form name="formulario" method="post" action="">
 		     
+		    <p>Usuario</p>
 		    <input class="inputsFormulario" placeholder="" type="text" name="user2" value="<?php echo $user;?>" maxlength="30" size="40">
 		    <br />
 		    
+		    <p>Contraseña</p>
 		    <input class="inputsFormulario" placeholder="" type="text" name="pass2" value="<?php echo $pass;?>" maxlength="30" size="40">
 		    <br />
 
-	<?php 		if($tipo == "Concesionario"){ //si el tipo = concesionario en el select box aparece selccionado concesionario ?>
-		    	
-			    	<select class="inputsFormulario" name="tipo2">
-					  <option value="Concesionario">Concesionario</option>
-					  <option value="Proveedor">Proveedor</option>
-					</select>
-				    <br />
-
-	<?php 		
-				} else { //si el tipo = proveedor en el select box aparece selccionado proveedor 
-
-	?>
-			    	<select class="inputsFormulario" name="tipo2">
-			    	  <option value="Proveedor">Proveedor</option>
-					  <option value="Concesionario">Concesionario</option>
-					</select>
-				    <br />
-
-	<?php 		
-				} 
-
-	?>
-			    
-		    
-		    <input class="boton" type="submit"  value="Modificar" name="modificar">
+	
+	  <input class="boton" type="submit"  value="Modificar" name="modificar">
 		    
 		</form>
 		<br />

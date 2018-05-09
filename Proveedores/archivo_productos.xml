@@ -2,225 +2,44 @@
   <row>
     <id>1</id>
     <proveedor>p1</proveedor>
-    <producto>Pepe</producto>
-    <cantidad>2</cantidad>
+    <producto>Coche</producto>
+    <cantidad>50</cantidad>
     <descatalogado>0</descatalogado>
   </row>
   <row>
-    <id>2</id>
+    <id>1</id>
     <proveedor>p1</proveedor>
-    <producto>Pepe</producto>
-    <cantidad>25</cantidad>
+    <producto>Bici</producto>
+    <cantidad>89</cantidad>
     <descatalogado>0</descatalogado>
   </row>
   <row>
-    <id>3</id>
+    <id>1</id>
     <proveedor>p1</proveedor>
-    <producto>Pepe</producto>
-    <cantidad>54</cantidad>
+    <producto>Rueda</producto>
+    <cantidad>82822</cantidad>
     <descatalogado>0</descatalogado>
   </row>
   <row>
-    <id>4</id>
+    <id>1</id>
     <proveedor>p1</proveedor>
-    <producto>Pepe</producto>
-    <cantidad>8</cantidad>
+    <producto>Motor</producto>
+    <cantidad>782</cantidad>
     <descatalogado>0</descatalogado>
   </row>
   <row>
-    <id>10</id>
-    <proveedor>p5</proveedor>
-    <producto>Niki</producto>
-    <cantidad>130</cantidad>
-    <descatalogado>0</descatalogado>
-  </row>
-  <row>
-    <id>11</id>
-    <proveedor>p5</proveedor>
-    <producto>Niki</producto>
-    <cantidad>221</cantidad>
-    <descatalogado>0</descatalogado>
-  </row>
-  <row>
-    <id>12</id>
-    <proveedor>p5</proveedor>
-    <producto>Niki</producto>
-    <cantidad>1822</cantidad>
-    <descatalogado>0</descatalogado>
-  </row>
-  <row>
-    <id>10</id>
-    <proveedor>p5</proveedor>
-    <producto>Niki</producto>
-    <cantidad>130</cantidad>
-    <descatalogado>0</descatalogado>
-  </row>
-  <row>
-    <id>11</id>
-    <proveedor>p5</proveedor>
-    <producto>Niki</producto>
-    <cantidad>221</cantidad>
-    <descatalogado>0</descatalogado>
-  </row>
-  <row>
-    <id>12</id>
-    <proveedor>p5</proveedor>
-    <producto>Niki</producto>
-    <cantidad>1822</cantidad>
-    <descatalogado>0</descatalogado>
-  </row>
-  <row>
-    <id>5</id>
-    <proveedor>p2</proveedor>
-    <producto>Lucas</producto>
-    <cantidad>100</cantidad>
-    <descatalogado>0</descatalogado>
-  </row>
-  <row>
-    <id>2</id>
+    <id>1</id>
     <proveedor>p1</proveedor>
-    <producto>Pepe</producto>
-    <cantidad>25</cantidad>
+    <producto>Asiento</producto>
+    <cantidad>289</cantidad>
     <descatalogado>0</descatalogado>
   </row>
   <row>
-    <id>3</id>
+    <id>1</id>
     <proveedor>p1</proveedor>
-    <producto>Pepe</producto>
-    <cantidad>54</cantidad>
+    <producto>Chapa</producto>
+    <cantidad>200</cantidad>
     <descatalogado>0</descatalogado>
   </row>
-  <row>
-    <id>4</id>
-    <proveedor>p1</proveedor>
-    <producto>Pepe</producto>
-    <cantidad>8</cantidad>
-    <descatalogado>0</descatalogado>
-  </row>
-  <row>
-    <id>10</id>
-    <proveedor>p5</proveedor>
-    <producto>Niki</producto>
-    <cantidad>130</cantidad>
-    <descatalogado>0</descatalogado>
-  </row>
-  <row>
-    <id>11</id>
-    <proveedor>p5</proveedor>
-    <producto>Niki</producto>
-    <cantidad>221</cantidad>
-    <descatalogado>0</descatalogado>
-  </row>
-  <row>
-    <id>12</id>
-    <proveedor>p5</proveedor>
-    <producto>Niki</producto>
-    <cantidad>1822</cantidad>
-    <descatalogado>0</descatalogado>
-  </row>
-  <row>
-    <id>10</id>
-    <proveedor>p5</proveedor>
-    <producto>Niki</producto>
-    <cantidad>130</cantidad>
-    <descatalogado>0</descatalogado>
-  </row>
-  <row>
-    <id>11</id>
-    <proveedor>p5</proveedor>
-    <producto>Niki</producto>
-    <cantidad>221</cantidad>
-    <descatalogado>0</descatalogado>
-  </row>
-  <row>
-    <id>12</id>
-    <proveedor>p5</proveedor>
-    <producto>Niki</producto>
-    <cantidad>1822</cantidad>
-    <descatalogado>0</descatalogado>
-  </row>
-  <row>
-    <id>5</id>
-    <proveedor>p2</proveedor>
-    <producto>Lucas</producto>
-    <cantidad>100</cantidad>
-    <descatalogado>0</descatalogado>
-  </row>
-  <row>
-    <id>6</id>
-    <proveedor>p3</proveedor>
-    <producto>Mike</producto>
-    <cantidad>21</cantidad>
-    <descatalogado>0</descatalogado>
-  </row>
-  <row>
-    <id>7</id>
-    <proveedor>p3</proveedor>
-    <producto>Mike</producto>
-    <cantidad>18</cantidad>
-    <descatalogado>0</descatalogado>
-  </row>
-  <row>
-    <id>8</id>
-    <proveedor>p4</proveedor>
-    <producto>Sebastian</producto>
-    <cantidad>84</cantidad>
-    <descatalogado>0</descatalogado>
-  </row>
-  <row>
-    <id>9</id>
-    <proveedor>p4</proveedor>
-    <producto>Sebastian</producto>
-    <cantidad>87</cantidad>
-    <descatalogado>0</descatalogado>
-  </row>
-  <row>
-    <id>6</id>
-    <proveedor>p3</proveedor>
-    <producto>Mike</producto>
-    <cantidad>21</cantidad>
-    <descatalogado>0</descatalogado>
-  </row>
-  <row>
-    <id>7</id>
-    <proveedor>p3</proveedor>
-    <producto>Mike</producto>
-    <cantidad>18</cantidad>
-    <descatalogado>0</descatalogado>
-  </row>
-  <row>
-    <id>8</id>
-    <proveedor>p4</proveedor>
-    <producto>Sebastian</producto>
-    <cantidad>84</cantidad>
-    <descatalogado>0</descatalogado>
-  </row>
-  <row>
-    <id>9</id>
-    <proveedor>p4</proveedor>
-    <producto>Sebastian</producto>
-    <cantidad>87</cantidad>
-    <descatalogado>0</descatalogado>
-  </row>
-  <row>
-    <id>10</id>
-    <proveedor>p5</proveedor>
-    <producto>Niki</producto>
-    <cantidad>130</cantidad>
-    <descatalogado>0</descatalogado>
-  </row>
-  <row>
-    <id>11</id>
-    <proveedor>p5</proveedor>
-    <producto>Niki</producto>
-    <cantidad>221</cantidad>
-    <descatalogado>0</descatalogado>
-  </row>
-  <row>
-    <id>12</id>
-    <proveedor>p5</proveedor>
-    <producto>Niki</producto>
-    <cantidad>1822</cantidad>
-    <descatalogado>0</descatalogado>
-  </row>
+
 </productos>
