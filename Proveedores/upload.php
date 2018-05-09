@@ -27,7 +27,7 @@ echo '<pre>';
                                 <tr>
                                     <th>Id</th>
                                     <th>Proveedor</th>
-                                    <th>Nombre</th>
+                                    <th>Producto</th>
                                     <th>Cantidad</th>
                                     <th>Descatalogado</th>
                                 </tr>";
@@ -35,7 +35,7 @@ echo '<pre>';
                                 echo "<tr>";
                                 echo "<td>$one->id</td>";
                                 echo "<td>$one->proveedor</td>";
-                                echo "<td>$one->nombre</td>";
+                                echo "<td>$one->producto</td>";
                                 echo "<td>$one->cantidad</td>";
                                 echo "<td>$one->descatalogado</td>";
                                 echo "</tr>";

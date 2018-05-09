@@ -1,10 +1,13 @@
 <?php
 echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
+    include("../db_connect/db_connect.php");
     class conecxion{
+        
+        
         function mostrarDatosEnTabla($resultado){ 
         }
         function recuperarDatosProductos($name_proveedor){
-            $enlace = mysqli_connect("localhost", "root", "", "practica_php");
+            include("../db_connect/db_connect.php");
            
             /* comprobar la conexión */
             if (mysqli_connect_errno()) {
@@ -13,7 +16,7 @@ echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
             }  
             $consulta = "SELECT * FROM pedidos where proveedor LIKE '$name_proveedor' ";    
             //$consulta = "SELECT * FROM productos";    
-            if ($resultado = mysqli_query($enlace, $consulta)){
+            if ($resultado = mysqli_query($connection, $consulta)){
                // mostrarDatosEnTabla($resultado);
                 
                 echo "<table id='pedidos_table' border='2' width='500'>\n";
@@ -39,10 +42,10 @@ echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
                 mysqli_free_result($resultado);
             }
             /* cerrar la conexión */
-            mysqli_close($enlace);
+            mysqli_close($connection);
         }
         function recuperarDatosProductosConfirmados($name_proveedor){
-            $enlace = mysqli_connect("localhost", "root", "", "practica_php");
+            include("../db_connect/db_connect.php");
            
             /* comprobar la conexión */
             if (mysqli_connect_errno()) {
@@ -52,7 +55,7 @@ echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
            
             $consulta = "SELECT * FROM pedidos where proveedor LIKE '$name_proveedor' AND confirmado = 1";    
             //$consulta = "SELECT * FROM productos";    
-            if ($resultado = mysqli_query($enlace, $consulta)){
+            if ($resultado = mysqli_query($connection, $consulta)){
                // mostrarDatosEnTabla($resultado);
                 
                 echo "<table id='pedidos_table' border='2' width='500'>\n";
@@ -78,10 +81,10 @@ echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
                 mysqli_free_result($resultado);
             }
             /* cerrar la conexión */
-            mysqli_close($enlace);
+            mysqli_close($connection);
         }
         function recuperarDatosProductosNoConfirmados($name_proveedor){
-            $enlace = mysqli_connect("localhost", "root", "", "practica_php");
+            include("../db_connect/db_connect.php");
            
             /* comprobar la conexión */
             if (mysqli_connect_errno()) {
@@ -90,7 +93,7 @@ echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
             }  
             $consulta = $consulta = "SELECT * FROM pedidos where proveedor LIKE '$name_proveedor' AND confirmado = 0"; 
             //$consulta = "SELECT * FROM productos";    
-            if ($resultado = mysqli_query($enlace, $consulta)){
+            if ($resultado = mysqli_query($connection, $consulta)){
                // mostrarDatosEnTabla($resultado);
                 
                 echo "<table id='pedidos_table' border='2' width='500'>\n";
@@ -116,10 +119,10 @@ echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
                 mysqli_free_result($resultado);
             }
             /* cerrar la conexión */
-            mysqli_close($enlace);
+            mysqli_close($connection);
         }
         function deleteAllElementsFromTablePedidos(){
-            $enlace = mysqli_connect("localhost", "root", "", "practica_php");
+            include("../db_connect/db_connect.php");
 
             /* comprobar la conexión */
             if (mysqli_connect_errno()) {
@@ -128,7 +131,7 @@ echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
             }
             $sql = "DELETE FROM pedidos";
 
-                if(mysqli_query($enlace, $sql)){
+                if(mysqli_query($connection, $sql)){
                     echo "Eliminacion correcta.";
                 } else{
                     echo "ERROR: Could not able to execute 'Eliminacion de valores'$sql. Tabla Pedidos <br>" . mysqli_error($link);
@@ -136,16 +139,16 @@ echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
             /*Reinicio del indice automático. */
             $sql_reset_id = "ALTER TABLE pedidos AUTO_INCREMENT = 1"; 
                 
-                if(mysqli_query($enlace, $sql_reset_id)){
+                if(mysqli_query($connection, $sql_reset_id)){
                     echo "Reseteo correcto de la tabla pedidos.";
                 } else{
                     echo "ERROR: Could not able to execute 'Reseteo no correcto'$sql. <br>" . mysqli_error($link);
                 }
             /* cerrar la conexión */
-            mysqli_close($enlace);              
+            mysqli_close($connection);              
         }
         function insertarDatosTablaPedidos(){
-            $enlace = mysqli_connect("localhost", "root", "", "practica_php");
+            include("../db_connect/db_connect.php");
 
             /* comprobar la conexión */
             if (mysqli_connect_errno()) {
@@ -171,17 +174,17 @@ echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
                                 ('concesionario6',NOW(),'pepe','plane','3453','35','1'),
                                 ('concesionario3',NOW(),'pepe','coche','234','6','0')";
 
-            if(mysqli_query($enlace, $sql)){
+            if(mysqli_query($connection, $sql)){
                 echo "Records added successfully in table pedidos.<br>";
             } else{
                 echo "ERROR: Could not able to execute $sql, in table pedidos. <br>"; //. mysqli_error($link);
             }
             /* cerrar la conexión */
-            mysqli_close($enlace);          
+            mysqli_close($connection);          
         }
         function insertarDatosTablaProductos(){
 
-            $enlace = mysqli_connect("localhost", "root", "", "practica_php");
+            include("../db_connect/db_connect.php");
 
             /* comprobar la conexión */
             if (mysqli_connect_errno()) {
@@ -189,7 +192,7 @@ echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
                 exit();
             }
             $sql = "INSERT INTO productos (proveedor, nombre, cantidad, descatalogado) VALUES 
-                                ('juan', 'coche', '2','true'),
+                                ('pepe', 'coche', '2','true'),
                                 ('p1', 'avion', '25','true'),
                                 ('pepe', 'bicicleta', '54','true'),
                                 ('p1', 'coche', '8','true'),
@@ -206,16 +209,16 @@ echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
                                 ('p5', 'bus', '221','true'),
                                 ('p5', 'camion', '1822','false')";
 
-            if(mysqli_query($enlace, $sql)){
+            if(mysqli_query($connection, $sql)){
                 echo "Records added successfully.<br>";
             } else{
                 echo "ERROR: Could not able to execute $sql. <br>" . mysqli_error($link);
             }
             /* cerrar la conexión */
-            mysqli_close($enlace);              
+            mysqli_close($connection);              
         }
         function deleteAllElementsFromTableProductos(){
-            $enlace = mysqli_connect("localhost", "root", "", "practica_php");
+            include("../db_connect/db_connect.php");
 
             /* comprobar la conexión */
             if (mysqli_connect_errno()) {
@@ -224,7 +227,7 @@ echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
             }
             $sql = "DELETE FROM productos";
 
-                if(mysqli_query($enlace, $sql)){
+                if(mysqli_query($connection, $sql)){
                     echo "Eliminacion correcta.";
                 } else{
                     echo "ERROR: Could not able to execute 'Eliminacion de valores'$sql. <br>" . mysqli_error($link);
@@ -232,16 +235,16 @@ echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
             /*Reinicio del indice automático. */
             $sql_reset_id = "ALTER TABLE productos AUTO_INCREMENT = 1"; 
                 
-                if(mysqli_query($enlace, $sql_reset_id)){
+                if(mysqli_query($connection, $sql_reset_id)){
                     echo "Reseteo correcto.";
                 } else{
                     echo "ERROR: Could not able to execute 'Reseteo no correcto'$sql. <br>" . mysqli_error($link);
                 }
             /* cerrar la conexión */
-            mysqli_close($enlace);              
+            mysqli_close($connection);              
         }
         function confirmarPedidoSi($ID){
-            $enlace = mysqli_connect("localhost", "root", "", "practica_php");
+            include("../db_connect/db_connect.php");
            
             /* comprobar la conexión */
             if (mysqli_connect_errno()) {
@@ -250,13 +253,13 @@ echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
             }
             
             $consulta = "UPDATE pedidos SET confirmado = 1 WHERE id = $ID";    
-            $resultado = mysqli_query($enlace, $consulta);
+            $resultado = mysqli_query($connection, $consulta);
             
             /* cerrar la conexión */
-            mysqli_close($enlace);
+            mysqli_close($connection);
         }
         function confirmarPedidoNo($ID){
-            $enlace = mysqli_connect("localhost", "root", "", "practica_php");
+           include("../db_connect/db_connect.php");
            
             /* comprobar la conexión */
             if (mysqli_connect_errno()) {
@@ -265,14 +268,13 @@ echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
             } 
              
             $consulta = "UPDATE pedidos SET confirmado = 0 WHERE id = $ID";    
-            $resultado = mysqli_query($enlace, $consulta);
+            $resultado = mysqli_query($connection, $consulta);
            
             /* cerrar la conexión */
-            mysqli_close($enlace);
+            mysqli_close($connection);
         }
         function cerrarSesion($proveedor){
-            $enlace = mysqli_connect("localhost", "root", "", "practica_php");
-           
+            include("../db_connect/db_connect.php");
             /* comprobar la conexión */
             if (mysqli_connect_errno()) {
                 printf("Falló la conexión: %s\n", mysqli_connect_error());
@@ -280,10 +282,10 @@ echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
             } 
              
             $consulta = "UPDATE usuario SET numeroSesiones = 0 WHERE username = '$proveedor'";    
-            $resultado = mysqli_query($enlace, $consulta);
+            $resultado = mysqli_query($connection, $consulta);
            
             /* cerrar la conexión */
-            mysqli_close($enlace);
+            mysqli_close($connection);
         }
     }
 ?>

@@ -23,19 +23,26 @@
                         <li>Visualizar valores de confirmados o no confirmados.</li>
                     </ol>
                 </div>
-            <legend id="legend" align="center">Bienvenido, <?php echo $nameProveedor ?>, las opciones que tiene son:<legend>
+            <legend id="legend" align="center">Bienvenido, <?php echo $nameProveedor ?>, las opciones que tiene son:</legend>
                 
         </fieldset>
         <br>
         <fieldset id="fieldset1">
 
-            <legend id="legend2">Cargar un fichero XML</legend>
+            <legend id="legend2">Opciones XML</legend>
                 <form enctype="multipart/form-data" action="upload.php" method="POST">
                     <!-- MAX_FILE_SIZE debe preceder al campo de entrada del fichero -->
                     <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
                     <!-- El nombre del elemento de entrada determina el nombre en el array $_FILES -->
-                    Enviar este fichero: <input name="fichero_usuario" type="file" />
+                    Cargar fichero  XML para visualiación <input name="fichero_usuario" type="file" />
                     <input type="submit" value="Visualizar fichero" />
+                </form>
+                <form enctype="multipart/form-data" action="guardar_productos.php?proveedor=<?php echo $nameProveedor?>" method="POST">
+                    <!-- MAX_FILE_SIZE debe preceder al campo de entrada del fichero -->
+                    <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+                    <!-- El nombre del elemento de entrada determina el nombre en el array $_FILES -->
+                    Actualizar productos con el fichero XML <input name="fichero_usuario" type="file" />
+                    <input type="submit" value="guardar cambios" />
                 </form>
         </fieldset>
         <br>
