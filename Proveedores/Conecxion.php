@@ -189,7 +189,7 @@ echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
                 exit();
             }
             $sql = "INSERT INTO productos (proveedor, nombre, cantidad, descatalogado) VALUES 
-                                ('pepe', 'coche', '2','true'),
+                                ('juan', 'coche', '2','true'),
                                 ('p1', 'avion', '25','true'),
                                 ('pepe', 'bicicleta', '54','true'),
                                 ('p1', 'coche', '8','true'),
