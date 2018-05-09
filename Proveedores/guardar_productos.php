@@ -33,15 +33,15 @@ $fichero_subido = ($archivo);
                                 $productoID =$linea["id"];
 
                                 mysqli_query($connection, "UPDATE productos SET cantidad='$one->cantidad', descatalogado='$one->descatalogado' WHERE id='$productoID'");
-                                echo "UPDATE productos SET cantidad='$one->cantidad', descatalogado='$one->descatalogado' WHERE id='$productoID'";
+                                //echo "UPDATE productos SET cantidad='$one->cantidad', descatalogado='$one->descatalogado' WHERE id='$productoID'";
                                 
                                 $cambiado = "si";
                             }
                             
                             if($cambiado == "no"){
                                 $sql = mysqli_query($connection, "INSERT INTO productos (proveedor, nombre, cantidad, descatalogado) VALUES ('".$proveedor."','".$one->producto."','".$one->cantidad."','".$one->descatalogado."')");
-                                echo "INSERT INTO productos (proveedor, nombre, cantidad, descatalogado) VALUES ('".$proveedor."','".$one->producto."','".$one->cantidad."','".$one->descatalogado."')";
-                                echo "</br>";
+                                //echo "INSERT INTO productos (proveedor, nombre, cantidad, descatalogado) VALUES ('".$proveedor."','".$one->producto."','".$one->cantidad."','".$one->descatalogado."')";
+                                //echo "</br>";
                             }
   
                             /*
