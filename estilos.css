@@ -1,51 +1,112 @@
 /* Inicio Admin */
+body {
+  width: 800px;
+  heigth: 400px;
+  margin: 50px auto;
+}
 
-.listaUsers {
-	width: 40%;
-	border: 1px solid black;
-	border-collapse: collapse;
+h1 {  
+	border: 2px solid #b5f2f2;  /*borde: estilo y color*/
+	font: normal normal 18px quicksand;  /*fuente*/
+	color:#cccccc;  /*color de la fuente*/
+	letter-spacing: 2px; /*separación entre las letras*/
+	text-align: center; /*alineación del texto*/
+	text-transform: uppercase; /*texto se transforma en mayúsculas*/
+	padding: 10px;  /*tamaño del fondo*/
+	border-radius: 30px 0px 30px 0px; /*ángulos de las 4 esquinas del borde/fondo*/
+}
+
+.listaUsers table  {    
+ 	font-family: "Lucida Sans Unicode", 
+	"Lucida Grande", 
+	Sans-Serif;
+ 	font-size: 12px;
+   	 margin: 45px;
+    	 width: 480px;
+ 	text-align: left;
+    	border-collapse: collapse; 
+}
+
+.listaUsers th {    
+ 	font-size: 13px;
+     	font-weight: normal;
+        padding: 8px;
+        background: #b9c9fe;
+    	border-top: 4px solid #aabcfe;
+        border-bottom: 1px solid #fff; color: #039;
 }
 
 .listaUsers td {
-	border: 1px solid black;	
-	text-align: center;
-
+    padding: 8px;
+    background: #e8edff;
+    border-bottom: 1px solid #fff;
+    color: #669;
+    border-top: 1px solid transparent;
 }
 
-.gris {
-	color: gray;
-		
+.listaUsers tr:hover td { 
+	background: #d0dafd;
+	 color: #339;
 }
-.negrita {
+
+.gris {	
+	color: gray;		
+}
+
+.negrita {	
 	font-weight: bold;
 }
 
+
+
 .verde {
+	
 	color: green;
+
 }
 
-.inputsFormulario {
-    width: 40%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+
+
+
+input[type=submit] {
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 300;
+    font-size: 15px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+  }
+
+input[type=submit]:hover{
+    color: #1883ba;
+    background-color: #ffffff;
 }
 
 .boton {
-    width: 40%;
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
+	width: 40%;
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: red 10px; 
+	cursor: pointer;
 }
 
-input[type=submit]:hover {
-    background-color: #45a049;
-}
+.button {
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 300;
+    font-size: 15px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+  }
 
+.button :hover {
+    color: #1883ba;
+    background-color: #ffffff;
+}
 /* Fin Admin */
