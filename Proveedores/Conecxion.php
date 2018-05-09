@@ -1,13 +1,13 @@
 <?php
 echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
-    include("../db_connect/db_connect.php");
+    $connection= mysqli_connect("localhost", "root", "", "practica_php");
     class conecxion{
         
         
         function mostrarDatosEnTabla($resultado){ 
         }
         function recuperarDatosProductos($name_proveedor){
-            include("../db_connect/db_connect.php");
+            $connection= mysqli_connect("localhost", "root", "", "practica_php");
            
             /* comprobar la conexión */
             if (mysqli_connect_errno()) {
@@ -45,7 +45,7 @@ echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
             mysqli_close($connection);
         }
         function recuperarDatosProductosConfirmados($name_proveedor){
-            include("../db_connect/db_connect.php");
+            $connection= mysqli_connect("localhost", "root", "", "practica_php");
            
             /* comprobar la conexión */
             if (mysqli_connect_errno()) {
@@ -84,7 +84,7 @@ echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
             mysqli_close($connection);
         }
         function recuperarDatosProductosNoConfirmados($name_proveedor){
-            include("../db_connect/db_connect.php");
+            $connection= mysqli_connect("localhost", "root", "", "practica_php");
            
             /* comprobar la conexión */
             if (mysqli_connect_errno()) {
@@ -122,7 +122,7 @@ echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
             mysqli_close($connection);
         }
         function deleteAllElementsFromTablePedidos(){
-            include("../db_connect/db_connect.php");
+            $connection= mysqli_connect("localhost", "root", "", "practica_php");
 
             /* comprobar la conexión */
             if (mysqli_connect_errno()) {
@@ -148,7 +148,7 @@ echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
             mysqli_close($connection);              
         }
         function insertarDatosTablaPedidos(){
-            include("../db_connect/db_connect.php");
+            $connection= mysqli_connect("localhost", "root", "", "practica_php");
 
             /* comprobar la conexión */
             if (mysqli_connect_errno()) {
@@ -184,7 +184,7 @@ echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
         }
         function insertarDatosTablaProductos(){
 
-            include("../db_connect/db_connect.php");
+            $connection= mysqli_connect("localhost", "root", "", "practica_php");
 
             /* comprobar la conexión */
             if (mysqli_connect_errno()) {
@@ -218,7 +218,7 @@ echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
             mysqli_close($connection);              
         }
         function deleteAllElementsFromTableProductos(){
-            include("../db_connect/db_connect.php");
+            $connection= mysqli_connect("localhost", "root", "", "practica_php");
 
             /* comprobar la conexión */
             if (mysqli_connect_errno()) {
@@ -244,7 +244,7 @@ echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
             mysqli_close($connection);              
         }
         function confirmarPedidoSi($ID){
-            include("../db_connect/db_connect.php");
+            $connection= mysqli_connect("localhost", "root", "", "practica_php");
            
             /* comprobar la conexión */
             if (mysqli_connect_errno()) {
@@ -259,7 +259,7 @@ echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
             mysqli_close($connection);
         }
         function confirmarPedidoNo($ID){
-           include("../db_connect/db_connect.php");
+           $connection= mysqli_connect("localhost", "root", "", "practica_php");
            
             /* comprobar la conexión */
             if (mysqli_connect_errno()) {
@@ -274,7 +274,7 @@ echo "<link rel='stylesheet' type='text/css' href='styleProveedores1.css' />";
             mysqli_close($connection);
         }
         function cerrarSesion($proveedor){
-            include("../db_connect/db_connect.php");
+            $connection= mysqli_connect("localhost", "root", "", "practica_php");
             /* comprobar la conexión */
             if (mysqli_connect_errno()) {
                 printf("Falló la conexión: %s\n", mysqli_connect_error());
