@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Practica PHP</title>
-	<link rel="stylesheet" type="text/css" href="../estilos.css">
+	<link rel="stylesheet" type="text/css" href="estilos.css">
 </head>
 
 <body>
