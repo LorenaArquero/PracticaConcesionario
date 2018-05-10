@@ -1,7 +1,7 @@
 
 <html5>
     <head>
-        <title>Page Proveedor</title>
+        <title>Proveedor</title>
         <link rel="stylesheet" type="text/css" href="styleProveedores1.css">
     </head>
 
@@ -34,7 +34,7 @@
                     <!-- MAX_FILE_SIZE debe preceder al campo de entrada del fichero -->
                     <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
                     <!-- El nombre del elemento de entrada determina el nombre en el array $_FILES -->
-                    Cargar fichero  XML para visualiación <input name="fichero_usuario" type="file" />
+                    Cargar fichero  XML para visualización <input name="fichero_usuario" type="file" />
                     <input type="submit" value="Visualizar fichero" />
                 </form>
                 <form enctype="multipart/form-data" action="guardar_productos.php?proveedor=<?php echo $nameProveedor?>" method="POST">
@@ -42,7 +42,7 @@
                     <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
                     <!-- El nombre del elemento de entrada determina el nombre en el array $_FILES -->
                     Actualizar productos con el fichero XML <input name="fichero_usuario" type="file" />
-                    <input type="submit" value="guardar cambios" />
+                    <input type="submit" value="Guardar cambios" />
                 </form>
         </fieldset>
         <br>

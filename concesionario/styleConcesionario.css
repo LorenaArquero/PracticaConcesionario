@@ -1,0 +1,88 @@
+/* fondo */
+body{
+    background-color: rgba(105, 90, 205, 0.2);
+}
+
+div{
+    width: 85%;
+    margin:0 auto 0 auto;
+}
+
+/* botones */
+.button {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+	padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+/* tabla */
+table {
+    text-align:center; 
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table td, table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+table tr:nth-child(even) {
+background-color: #f2f2f2;
+}
+
+table tr:hover {background-color: #ddd;}
+
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(197, 194, 248);
+    color: white;
+}
+
+table tr:first-child{
+background-color: #2f2f2f;
+color:white;
+}
+
+/* campos */
+fieldset{
+    display: block;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-top: 0.35em;
+    padding-bottom: 0.625em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    border: 2px groove (internal value);
+    background-color: rgba(252, 253, 137, 0.898);
+    border:3px solid rgb(128, 62, 0);
+    border-radius: 10px;
+}
+
+/* leyendas */
+legend{
+    background-color: rgba(250, 215, 224, 0.809);
+    font-size: 18px;
+    font-style:Helvetica;
+    padding: 15px;
+    border-radius: 50px 50px 50px 50px;
+    border-color: rgba(29, 28, 33, 0.748);
+    border-style: solid;
+}
