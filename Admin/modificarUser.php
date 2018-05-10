@@ -68,11 +68,11 @@
 		<form name="formulario" method="post" action="">
 		     
 		    <p>Usuario</p>
-		    <input  placeholder="" type="text" name="user2" value="<?php echo $user;?>" maxlength="30" size="40">
+		    <input  class="boton" placeholder="" type="text" name="user2" value="<?php echo $user;?>" maxlength="30" size="40">
 		    <br />
 		    
 		    <p>Contraseña</p>
-		    <input  placeholder="" type="text" name="pass2" value="<?php echo $pass;?>" maxlength="30" size="40">
+		    <input  class="boton" placeholder="" type="text" name="pass2" value="<?php echo $pass;?>" maxlength="30" size="40">
 		    <br />
 
 	
@@ -80,7 +80,7 @@
 		    
 		</form>
 		<br />
-		<a href="admin.php">Regresar</a>
+		<a class="button" href="admin.php">Regresar</a>
 
 </body>
 </html>
