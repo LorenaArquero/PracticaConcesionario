@@ -8,10 +8,10 @@
    -webkit-box-shadow: 3px 3px 10px 0px rgba(50, 50, 50, 0.75);
    margin-left: auto;
    margin-right: auto;
-   margin-top: 10%;
+   margin-top: 1%;
    max-width: 20em;
-   padding-bottom: 10px;
-   padding-top: 10px;
+   padding-bottom: 5px;
+   padding-top: 5px;
 }
 
 /* Etiquetas del formulario */
@@ -38,6 +38,25 @@ input[type="password"] {
    margin-right: auto;
 }
 
+textarea{
+	width: 320px;	
+	border: none;
+	border-radius: 20px;
+	outline: none;
+	padding: 10px;
+	font-family: 'Sniglet', cursive;
+	font-size: 1em;
+	color: #676767;
+	transition: border 0.5s;
+	-webkit-transition: border 0.5s;
+	-moz-transition: border 0.5s;
+	-o-transition: border 0.5s;
+	border: solid 3px #98d4f3;	
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	
+}
 /* Botón */
 
 input[type="submit"] {
@@ -55,7 +74,39 @@ input[type="submit"] {
    width: 150px;
 }
 
+h1 {  
+	border: 2px solid #b5f2f2;  /*borde: estilo y color*/
+	font: normal normal 18px quicksand;  /*fuente*/
+	color:#cccccc;  /*color de la fuente*/
+	letter-spacing: 2px; /*separación entre las letras*/
+	text-align: center; /*alineación del texto*/
+	text-transform: uppercase; /*texto se transforma en mayúsculas*/
+	padding: 10px;  /*tamaño del fondo*/
+}
+
 input[type="submit"]:hover {
+   cursor: pointer;
+   background-color: #A33D41;
+   opacity: 0.8;
+}
+
+input[type="button"] {
+   background-color: #A3A0A2;
+   border: none;
+   border-radius: 6px;
+   color: white;
+   display: block;
+   font-size: 1em;
+   height: 3em;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: -10px;
+   text-align: center;
+   width: 150px;
+}
+
+
+input[type="button"]:hover {
    cursor: pointer;
    background-color: #A33D41;
    opacity: 0.8;
