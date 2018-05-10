@@ -111,9 +111,9 @@ function guardarDatos(user){
     
     var i;
     var contenedor = $("#contenedor");
-    var formulario = contenedor.children().first();
+    var formulario = contenedor.children().first().next().next().next();
+
     var nulo = Boolean(0); 
-    console.log(user);
     
     for( i = 0; i < pedidos; i++){ //comprobar si hay valores nulos
         
@@ -124,12 +124,11 @@ function guardarDatos(user){
         
         if( proveedor == "0" || producto == "0" || cantidad == 0 ){
             nulo = Boolean(1);
+            formulario = formulario.next()
             continue;
         }
         formulario = formulario.next()
-        
     }
-    formulario = contenedor.children().first();
     
     
     if(nulo){
@@ -149,9 +148,10 @@ function subirDatos(user){
     
     var i;
     var contenedor = $("#contenedor");
-    var formulario = contenedor.children().first();
     
-
+    var formulario = contenedor.children().first().next().next().next();
+    
+    
     for( i = 0; i < pedidos; i++){
 
         var proveedor = formulario.children().first().val();
@@ -161,6 +161,7 @@ function subirDatos(user){
 
         if( proveedor == "0" || producto == "0" || cantidad == 0 ){
             nulo = Boolean(1);
+            formulario = formulario.next();
             continue;
         }
 
@@ -174,7 +175,7 @@ function subirDatos(user){
                 async:false,
 
         }).responseText;
-        console.log(saveme);
+        
         formulario = formulario.next();
     }
     
