@@ -32,14 +32,14 @@
 
 		<form name="formulario" method="post" action="">
 		     
-		    <input class="inputsFormulario" placeholder="Usuario" type="text" name="user" maxlength="30" size="40">
+		    <input  placeholder="Usuario" type="text" name="user" maxlength="30" size="40">
 		    <br />
 		    
-		    <input class="inputsFormulario" placeholder="Contraseña" type="password" name="pass" maxlength="30" size="40">
+		    <input  placeholder="Contraseña" type="password" name="pass" maxlength="30" size="40">
 			<br />
 
 
-		    <select class="inputsFormulario" name="tipo">
+		    <select name="tipo">
 			  <option value="Concesionario">Concesionario</option>
 			  <option value="Proveedor">Proveedor</option>
 			</select>
