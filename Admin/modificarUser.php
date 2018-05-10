@@ -68,11 +68,11 @@
 		<form name="formulario" method="post" action="">
 		     
 		    <p>Usuario</p>
-		    <input class="inputsFormulario" placeholder="" type="text" name="user2" value="<?php echo $user;?>" maxlength="30" size="40">
+		    <input  placeholder="" type="text" name="user2" value="<?php echo $user;?>" maxlength="30" size="40">
 		    <br />
 		    
 		    <p>Contraseña</p>
-		    <input class="inputsFormulario" placeholder="" type="text" name="pass2" value="<?php echo $pass;?>" maxlength="30" size="40">
+		    <input  placeholder="" type="text" name="pass2" value="<?php echo $pass;?>" maxlength="30" size="40">
 		    <br />
 
 	
