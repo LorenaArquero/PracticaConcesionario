@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html>
     <head>
         <title>Practica PHP</title>
@@ -46,8 +46,8 @@
             <!-- Aqui se mostraran los datos -->
         </table>
     </form>
-
-    <a href="admin.php">Regresar</a>
+    <br/>
+    <a class="button" href="admin.php">Regresar</a>
 
     </body>
 </html>
