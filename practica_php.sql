@@ -86,8 +86,26 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `username`, `password`, `tipo`, `numeroSesiones`) VALUES
-(1, 'pepe', 'pepe', 'Concesionario', 0),
-(2, 'jojo', 'jojo', 'Proveedor', 0);
+(1, 'concesionario1', 'concesionario1', 'Concesionario', 0),
+(2, 'proveedor1', 'proveedor1', 'Proveedor', 0);
+
+--
+-- Volcado de datos para la tabla `productos`
+--
+
+INSERT INTO `productos` (`id`, `proveedor`, `nombre`, `cantidad`, `descatalogado`) VALUES
+(1, 'proveedor1', 'producto1', 500, 0),
+(2, 'proveedor1', 'producto2', 500, 0);
+
+
+--
+-- Volcado de datos para la tabla `pedidos`
+--
+
+INSERT INTO `pedidos` (`id`, `concesionario`, `fecha`, `proveedor`, `producto`, `productoID`, `cantidad`, `confirmado` ) VALUES
+(1, 'concesionario1', '2018-05-09', 'proveedor1', 'producto1', 1, 20, 0),
+(2, 'concesionario1', '2018-05-10', 'proveedor1', 'producto2', 2, 30, 0);
+
 
 --
 -- Índices para tablas volcadas
