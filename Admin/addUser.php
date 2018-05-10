@@ -32,10 +32,10 @@
 
 		<form name="formulario" method="post" action="">
 		     
-		    <input  placeholder="Usuario" type="text" name="user" maxlength="30" size="40">
+		    <input  class="imputFormulario" placeholder="Usuario" type="text" name="user" maxlength="30" size="40">
 		    <br />
 		    
-		    <input  placeholder="Contraseña" type="password" name="pass" maxlength="30" size="40">
+		    <input   class="imputFormulario" placeholder="Contraseña" type="password" name="pass" maxlength="30" size="40">
 			<br />
 
 
@@ -49,7 +49,7 @@
 		    
 		</form>
 		<br />
-		<a href="admin.php">Regresar</a>
+		<a  class="button" href="admin.php">Regresar</a>
 
 </body>
 
