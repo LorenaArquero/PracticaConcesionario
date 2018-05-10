@@ -70,7 +70,7 @@ function agregarNuevo(){
     input.name="cantidad";
     input.value="0";
     input.min="0";
-    //input.max="100"; //quiero poner que el máximo sea la cantidad de ese producto en el proveedor, cosa algo tocha
+    //input.max="100"; 
     
     //añadir al form
     nuevoFormulario.appendChild(selProveedores);
@@ -134,10 +134,9 @@ function guardarDatos(user){
     
     if(nulo){
         
-        if (confirm("Algún valor sin rellenar. Si cntinúas ese valor no será guardado, ¿continuar de todos modos?")){
+        if (confirm("Algún valor sin rellenar. Si continúas, ese valor no será guardado, ¿continuar de todos modos?")){
             subirDatos(user);
         } else {
-            //txt = "You pressed Cancel!";
         } 
     }else{
         subirDatos(user);
